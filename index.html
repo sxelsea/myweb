@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,53 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title Tag: Это заголовок, который виден в поисковой выдаче -->
-    <title>Welcome to My First Website - Learn HTML Basics</title>
+    <title>Готовые ответы по Dart</title>
 
-    <!-- Meta Description: Описание страницы, которое поисковики показывают в результатах поиска -->
-    <meta name="description" content="This is my first website where you can learn basic HTML and see how to create a simple web page.">
-
-    <!-- Meta Keywords: Ключевые слова для поисковой оптимизации -->
-    <meta name="keywords" content="HTML, web development, first website, learn HTML, basic HTML, website creation">
-
-    <!-- Meta Author: Указание автора сайта -->
+    <meta name="description" content="Examples and assignments for Dart programming language.">
+    <meta name="keywords" content="Dart, programming, code examples, assignments">
     <meta name="author" content="Your Name">
-
-    <!-- Open Graph Tags: Эти теги полезны для социальных сетей (например, при публикации ссылки на сайт) -->
-    <meta property="og:title" content="Welcome to My First Website - Learn HTML Basics">
-    <meta property="og:description" content="Learn the basics of HTML with my first website.">
-    <meta property="og:image" content="link-to-your-image.jpg"> <!-- Замените на ссылку на изображение -->
-    <meta property="og:url" content="https://username.github.io/my-website">
-
-    <!-- Twitter Card Tags: Для лучшего отображения на Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Welcome to My First Website">
-    <meta name="twitter:description" content="Learn the basics of HTML with my first website.">
-    <meta name="twitter:image" content="link-to-your-image.jpg"> <!-- Замените на ссылку на изображение -->
-
+    
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
         }
         pre {
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             border: 1px solid #ddd;
-            padding: 10px;
+            border-radius: 5px;
+            padding: 15px;
             overflow-x: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         code {
             display: block;
             white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .example-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #3498db;
+        }
+        .example-description {
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+        .assignment-title {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+        .assignment-description {
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #95a5a6;
         }
     </style>
 </head>
 <body>
 
-    <h2>Dart Code Examples</h2>
-    <h3>Пользователь вводит свой оклад до вычета налога. Если он больше 100 тысяч тенге, то вычтите из него 13% НДФ, иначе – 6%. Выведите полученный результат в терминал. Реализуйте 2 версии программы с разными подходами.</h3>
-    <h4>Пример 1</h4>
-    <pre><code>// import 'dart:io';
+    <h1>Готовые ответы по Dart</h1>
+    
+    <h2>Примеры кода Dart</h2>
+    
+    <div class="example">
+        <div class="example-title">Пример 1: Налог на доход</div>
+        <div class="example-description">Пользователь вводит свой оклад до вычета налога. Если он больше 100 тысяч тенге, то вычтите из него 13% НДФ, иначе – 6%. Выведите полученный результат в терминал. Реализуйте 2 версии программы с разными подходами.</div>
+        <h4>Версия 1</h4>
+        <pre><code>// import 'dart:io';
 
 // void main() {
 //   print("Введите ваш оклад до вычета налога:");
@@ -68,10 +92,8 @@
 //   double netSalary = salary - tax;
 //   print("Оклад после вычета налога: $netSalary тенге");
 // }</code></pre>
-         <h4>Пример 2</h4>
-    <pre><code>
-
-// import 'dart:io';
+        <h4>Версия 2</h4>
+        <pre><code>// import 'dart:io';
 
 // void main() {
 //   print("Введите ваш оклад до вычета налога:");
@@ -82,9 +104,13 @@
 //   double netSalary = salary - tax;
 //   print("Оклад после вычета налога: $netSalary тенге");
 // }</code></pre>
-<h3>Пользователь вводит с клавиатуры номер месяца, а программа должна вывести в терминал количество дней в нем. Реализуйте 2 версии программы с разными подходами (if и switch) </h3>
-    <h4>Пример 1</h4>
-    <pre><code>import 'dart:io';
+    </div>
+
+    <div class="example">
+        <div class="example-title">Пример 2: Количество дней в месяце</div>
+        <div class="example-description">Пользователь вводит номер месяца, а программа должна вывести в терминал количество дней в нем. Реализуйте 2 версии программы с разными подходами (if и switch).</div>
+        <h4>Версия 1</h4>
+        <pre><code>import 'dart:io';
 
 void main() {
     print("Введите номер месяца (1-12):");
@@ -100,10 +126,8 @@ void main() {
         print("Некорректный номер месяца");
     }
     }</code></pre>
-   
-
-    <h4>Пример 2</h4>
-    <pre><code>import 'dart:io';
+        <h4>Версия 2</h4>
+        <pre><code>import 'dart:io';
 
 void main() {
     print("Введите номер месяца (1-12):");
@@ -133,20 +157,24 @@ void main() {
             print("Вы ввели некорректный номер месяца.");
     }
 }</code></pre>
-<h3> Пользователь вводит с клавиатуры целочисленный список. Напишите функцию, которая возвращает его максимальное значение. Полученный результат выведите в терминал.</h3>
+    </div>
 
-    <h4>Пример 1</h4>
-    <pre><code>import 'dart:io';
+    <div class="example">
+        <div class="example-title">Пример 3: Максимальное значение в списке</div>
+        <div class="example-description">Пользователь вводит целочисленный список. Напишите функцию, которая возвращает его максимальное значение. Полученный результат выведите в терминал.</div>
+        <h4>Версия 1</h4>
+        <pre><code>import 'dart:io';
 
 int findMax(List<int> numbers) {
     int maxNumber = numbers[0];
-    for (int i = 1; i <numbers.length; i++){
-        if (numbers[i]> maxNumber){
-            maxNumber= numbers[0];
+    for (int i = 1; i < numbers.length; i++){
+        if (numbers[i] > maxNumber){
+            maxNumber = numbers[i];
         }
     }
     return maxNumber;
 }
+
 void main() {
     print("Введите список чисел через пробел:");
     List<int> numbers = stdin.readLineSync()!.split(' ').map(int.parse).toList();
@@ -154,9 +182,9 @@ void main() {
     int maxValue = findMax(numbers);
     print("Максимальное число из списка: $maxValue");
 }</code></pre>
-    
-    <h4>Пример 2</h4>
-    <pre><code>import 'dart:io';
+        <h4>Версия 2</h4>
+        <pre><code>import 'dart:io';
+
 void main() {
     print("Введите список чисел:");
     List<int> numbers = stdin.readLineSync()!.split(' ').map(int.parse).toList();
@@ -164,10 +192,14 @@ void main() {
     int maxValue = numbers.reduce((a, b) => a > b ? a : b);
     print("Максимальное значение в списке: $maxValue");
 }</code></pre>
+    </div>
+
     <h2>Домашнее задание</h2>
 
-    <h3>Задание 1. Написать функцию высшего порядка, которая принимает список чисел и функцию для выполнения операции над элементами списка.</h3>
-    <pre><code>// void processList(List<int> numbers, int Function(int) operation) {
+    <div class="assignment">
+        <h3 class="assignment-title">Задание 1: Функция высшего порядка</h3>
+        <div class="assignment-description">Написать функцию высшего порядка, которая принимает список чисел и функцию для выполнения операции над элементами списка.</div>
+        <pre><code>// void processList(List<int> numbers, int Function(int) operation) {
 //   for (int i = 0; i < numbers.length; i++) {
 //     numbers[i] = operation(numbers[i]);
 //   }
@@ -182,9 +214,12 @@ void main() {
 //   processList(numbers, (num) => num * num);
 //   print(numbers); 
 // }</code></pre>
+    </div>
 
-    <h3>Задание 2. Написать замыкание, которое сохраняет состояние между вызовами.</h3>
-    <pre><code>Function createCounter() {
+    <div class="assignment">
+        <h3 class="assignment-title">Задание 2: Замыкание</h3>
+        <div class="assignment-description">Написать замыкание, которое сохраняет состояние между вызовами.</div>
+        <pre><code>Function createCounter() {
   int count = 0;
 
   return () {
@@ -203,15 +238,18 @@ void main() {
   var anotherCounter = createCounter();
   print(anotherCounter()); 
 }</code></pre>
+    </div>
 
-    <h2>ООП Dart</h2>
+      <h2>ООП Dart</h2>
 
-    <h3>Общежитие</h3>
-    <pre><code>
+    <div class="example">
+        <h3 class="example-title">Общежитие</h3>
+        <pre><code>
 class Student {
   final String name;
 
   Student(this.name);
+  
   @override
   String toString() {
     return name;
@@ -263,12 +301,14 @@ void main() {
   dormRoom.addStudent(Student('Алекс'));
   print(dormRoom);
 }</code></pre>
+    </div>
 
-
-    <h1>Домашнее задание:</h1>
+    <div class="assignment">
+        <h3 class="assignment-title">Домашнее задание:</h3>
         
-<h3>1. Создать класс Student с методами учиться и отдыхать</h3>
-    <pre><code>
+        <h4 class="assignment-title">Задание 1: Класс Student</h4>
+        <div class="assignment-description">Создать класс Student с методами учиться и отдыхать.</div>
+        <pre><code>
 class Student {
   String name;
   int age;
@@ -291,9 +331,9 @@ void main() {
   student.rest();
 }</code></pre>
 
-
-    <h3>2. Реализовать класс Vehicle и классы-наследники Car и Bicycle</h3>
-    <pre><code>
+        <h4 class="assignment-title">Задание 2: Классы Vehicle, Car и Bicycle</h4>
+        <div class="assignment-description">Реализовать класс Vehicle и классы-наследники Car и Bicycle.</div>
+        <pre><code>
 abstract class Vehicle {
   void move();
 }
@@ -319,6 +359,7 @@ void main() {
   Vehicle myBicycle = Bicycle();
   myBicycle.move();
 }</code></pre>
-
+    </div>
 </body>
 </html>
+
