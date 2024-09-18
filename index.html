@@ -4,10 +4,200 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+
+    <!-- Title Tag: Это заголовок, который виден в поисковой выдаче -->
+    <title>Welcome to My First Website - Learn HTML Basics</title>
+
+    <!-- Meta Description: Описание страницы, которое поисковики показывают в результатах поиска -->
+    <meta name="description" content="This is my first website where you can learn basic HTML and see how to create a simple web page.">
+
+    <!-- Meta Keywords: Ключевые слова для поисковой оптимизации -->
+    <meta name="keywords" content="HTML, web development, first website, learn HTML, basic HTML, website creation">
+
+    <!-- Meta Author: Указание автора сайта -->
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph Tags: Эти теги полезны для социальных сетей (например, при публикации ссылки на сайт) -->
+    <meta property="og:title" content="Welcome to My First Website - Learn HTML Basics">
+    <meta property="og:description" content="Learn the basics of HTML with my first website.">
+    <meta property="og:image" content="link-to-your-image.jpg"> <!-- Замените на ссылку на изображение -->
+    <meta property="og:url" content="https://username.github.io/my-website">
+
+    <!-- Twitter Card Tags: Для лучшего отображения на Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Welcome to My First Website">
+    <meta name="twitter:description" content="Learn the basics of HTML with my first website.">
+    <meta name="twitter:image" content="link-to-your-image.jpg"> <!-- Замените на ссылку на изображение -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
-    <p>This is my first website, created using HTML!</p>
+    <p>This is my first website, created using HTML! On this site, you will learn the basics of web development, starting with HTML.</p>
+
+    <h2>Dart Code Examples</h2>
+    
+    <h3>Example 1</h3>
+    <pre><code>// import 'dart:io';
+
+// void main() {
+//   print("Введите ваш оклад до вычета налога:");
+//   double salary = double.parse(stdin.readLineSync()!);
+
+//   double tax;
+//   if (salary > 100000) {
+//     tax = salary * 0.13;
+//   } else {
+//     tax = salary * 0.06;
+//   }
+
+//   double netSalary = salary - tax;
+//   print("Оклад после вычета налога: $netSalary тенге");
+// }
+
+// import 'dart:io';
+
+// void main() {
+//   print("Введите ваш оклад до вычета налога:");
+//   double salary = double.parse(stdin.readLineSync()!);
+
+//   double tax = (salary > 100000) ? salary * 0.13 : salary * 0.06;
+
+//   double netSalary = salary - tax;
+//   print("Оклад после вычета налога: $netSalary тенге");
+// }</code></pre>
+
+    <h3>Example 2</h3>
+    <pre><code>import 'dart:io';
+
+void main() {
+    print("Введите номер месяца (1-12):");
+    int month = int.parse(stdin.readLineSync()!);
+    
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 12){
+        print("В этом месяце 31 день.");
+    }   else if (month == 4 || month == 6 || month == 9 || month == 11){
+        print("В этом месяце 30 дней");
+    }   else if (month == 2) {
+        print("В феврале 28 дней");
+    } else {
+        print("Некорректный номер месяца");
+    }
+    }</code></pre>
+
+    <h3>Example 3</h3>
+    <pre><code>import 'dart:io';
+
+void main() {
+    print("Введите номер месяца (1-12):");
+
+    int month = int.parse(stdin.readLineSync()!);
+
+    switch(month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            print("В этом месяце 31 день");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            print("В этом месяце 30 дней");
+            break;
+        case 2:
+            print("В этом месяце 28 дней");
+            break;
+        default:
+            print("Вы ввели некорректный номер месяца.");
+    }
+}</code></pre>
+
+    <h3>Example 4</h3>
+    <pre><code>import 'dart:io';
+
+int findMax(List<int> numbers) {
+    int maxNumber = numbers[0];
+    for (int i = 1; i <numbers.length; i++){
+        if (numbers[i]> maxNumber){
+            maxNumber= numbers[0];
+        }
+    }
+    return maxNumber;
+}
+void main() {
+    print("Введите список чисел через пробел:");
+    List<int> numbers = stdin.readLineSync()!.split(' ').map(int.parse).toList();
+
+    int maxValue = findMax(numbers);
+    print("Максимальное число из списка: $maxValue");
+}</code></pre>
+
+    <h3>Example 5</h3>
+    <pre><code>import 'dart:io';
+void main() {
+    print("Введите список чисел:");
+    List<int> numbers = stdin.readLineSync()!.split(' ').map(int.parse).toList();
+
+    int maxValue = numbers.reduce((a, b) => a > b ? a : b);
+    print("Максимальное значение в списке: $maxValue");
+}</code></pre>
+
+    <h3>Example 6</h3>
+    <pre><code>// void processList(List<int> numbers, int Function(int) operation) {
+//   for (int i = 0; i < numbers.length; i++) {
+//     numbers[i] = operation(numbers[i]);
+//   }
+// }
+
+// void main() {
+//   List<int> numbers = [1, 2, 3, 4, 5];
+
+//   processList(numbers, (num) => num * 2);
+//   print(numbers); 
+
+//   processList(numbers, (num) => num * num);
+//   print(numbers); 
+// }</code></pre>
+
+    <h3>Example 7</h3>
+    <pre><code>Function createCounter() {
+  int count = 0;
+
+  return () {
+    count++;
+    return count;
+  };
+}
+
+void main() {
+  var counter = createCounter();
+
+  print(counter()); 
+  print(counter()); 
+  print(counter()); 
+
+  var anotherCounter = createCounter();
+  print(anotherCounter()); 
+}</code></pre>
 </body>
 </html>
