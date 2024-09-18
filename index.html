@@ -1,3 +1,6 @@
+Вот как вы можете интегрировать новый код в ваш HTML файл. Я добавил новый раздел с примерами кода в конец вашего существующего HTML:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -199,5 +202,115 @@ void main() {
   var anotherCounter = createCounter();
   print(anotherCounter()); 
 }</code></pre>
+
+    <h3>Example 8</h3>
+    <pre><code>// Класс «Студент»
+class Student {
+  final String name;
+
+  Student(this.name);
+  @override
+  String toString() {
+    return name;
+  }
+}
+
+// Класс «Комната общежития»
+class DormRoom {
+  int maxCapacity;
+  int currentCapacity = 0;
+  List<Student> students = [];
+
+  DormRoom(this.maxCapacity);
+
+  void addStudent(Student student) {
+    if (student.name.toLowerCase() == 'комендант') {
+      students.add(student);
+      currentCapacity++;
+      print("${student.name} добавлен(-а) в комнату. Комендант может находиться в комнате в любое время");
+    } else {
+      if (currentCapacity >= maxCapacity) {
+        print("Ошибка: Превышен максимальный размер комнаты. Невозможно добавить ${student.name}");
+      } else {
+        students.add(student);
+        currentCapacity++;
+        print('${student.name} добавлен(-а) в комнату');
+      }
+    }
+  }
+
+  @override
+  String toString() {
+    return 'Комната общежития:\n'
+           'Максимальная вместимость: $maxCapacity\n'
+           'Текущая вместимость: ${students.join(', ')}';
+  }
+}
+
+void main() {
+  var dormRoom = DormRoom(3);
+
+  dormRoom.addStudent(Student('Леонардо'));
+  dormRoom.addStudent(Student('Анастасия'));
+  dormRoom.addStudent(Student('Саша'));
+  dormRoom.addStudent(Student('Комендант'));
+
+  print(dormRoom);
+
+  dormRoom.addStudent(Student('Алекс'));
+  print(dormRoom);
+}
+
+// Домашнее задание:
+// 1. Создать класс Student с методами учиться и отдыхать
+class Student {
+  String name;
+  int age;
+
+  Student(this.name, this.age);
+
+  void study() {
+    print('$name учится.');
+  }
+
+  void rest() {
+    print('$name отдыхает.');
+  }
+}
+
+void main() {
+  var student = Student('Иван', 20);
+
+  student.study();
+  student.rest();
+}
+
+// 2. Реализовать класс Vehicle и классы-наследники Car и Bicycle
+abstract class Vehicle {
+  void move();
+}
+
+class Car extends Vehicle {
+  @override
+  void move() {
+    print('Автомобиль едет по дороге.');
+  }
+}
+
+class Bicycle extends Vehicle {
+  @override
+  void move() {
+    print('Велосипед едет по тропинке.');
+  }
+}
+
+void main() {
+  Vehicle myCar = Car();
+  myCar.move();
+
+  Vehicle myBicycle = Bicycle();
+  myBicycle.move();
+}</code></pre>
+
 </body>
 </html>
