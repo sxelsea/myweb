@@ -50,12 +50,10 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my first website, created using HTML! On this site, you will learn the basics of web development, starting with HTML.</p>
 
     <h2>Dart Code Examples</h2>
-    
-    <h3>Example 1</h3>
+    <h4>Пользователь вводит свой оклад до вычета налога. Если он больше 100 тысяч тенге, то вычтите из него 13% НДФ, иначе – 6%. Выведите полученный результат в терминал. Реализуйте 2 версии программы с разными подходами.</h4>
+    <h3>Пример 1</h3>
     <pre><code>// import 'dart:io';
 
 // void main() {
@@ -71,7 +69,9 @@
 
 //   double netSalary = salary - tax;
 //   print("Оклад после вычета налога: $netSalary тенге");
-// }
+// }</code></pre>
+         <h3>Пример 2</h3>
+    <pre><code>
 
 // import 'dart:io';
 
@@ -84,8 +84,8 @@
 //   double netSalary = salary - tax;
 //   print("Оклад после вычета налога: $netSalary тенге");
 // }</code></pre>
-
-    <h3>Example 2</h3>
+<h4>Пользователь вводит с клавиатуры номер месяца, а программа должна вывести в терминал количество дней в нем. Реализуйте 2 версии программы с разными подходами (if и switch) </h4>
+    <h3>Пример 1</h3>
     <pre><code>import 'dart:io';
 
 void main() {
@@ -102,8 +102,9 @@ void main() {
         print("Некорректный номер месяца");
     }
     }</code></pre>
+   
 
-    <h3>Example 3</h3>
+    <h3>Пример 2</h3>
     <pre><code>import 'dart:io';
 
 void main() {
@@ -134,8 +135,9 @@ void main() {
             print("Вы ввели некорректный номер месяца.");
     }
 }</code></pre>
+<h4> Пользователь вводит с клавиатуры целочисленный список. Напишите функцию, которая возвращает его максимальное значение. Полученный результат выведите в терминал.</h4>
 
-    <h3>Example 4</h3>
+    <h3>Пример 1</h3>
     <pre><code>import 'dart:io';
 
 int findMax(List<int> numbers) {
@@ -154,8 +156,8 @@ void main() {
     int maxValue = findMax(numbers);
     print("Максимальное число из списка: $maxValue");
 }</code></pre>
-
-    <h3>Example 5</h3>
+    
+    <h3>Пример 2</h3>
     <pre><code>import 'dart:io';
 void main() {
     print("Введите список чисел:");
@@ -164,8 +166,9 @@ void main() {
     int maxValue = numbers.reduce((a, b) => a > b ? a : b);
     print("Максимальное значение в списке: $maxValue");
 }</code></pre>
+    <h2>Домашнее задание</h2>
 
-    <h3>Example 6</h3>
+    <h3>Задание 1. Написать функцию высшего порядка, которая принимает список чисел и функцию для выполнения операции над элементами списка. </h3>
     <pre><code>// void processList(List<int> numbers, int Function(int) operation) {
 //   for (int i = 0; i < numbers.length; i++) {
 //     numbers[i] = operation(numbers[i]);
@@ -182,7 +185,7 @@ void main() {
 //   print(numbers); 
 // }</code></pre>
 
-    <h3>Example 7</h3>
+    <h3>Задание 2. Написать замыкание, которое сохраняет состояние между вызовами.</h3>
     <pre><code>Function createCounter() {
   int count = 0;
 
@@ -261,8 +264,9 @@ void main() {
   print(dormRoom);
 }</code></pre>
 
-<pre><code>
+
     <h1>Домашнее задание:<h1>
+        <pre><code>
 <h3>1. Создать класс Student с методами учиться и отдыхать</h3>
 class Student {
   String name;
@@ -286,8 +290,9 @@ void main() {
   student.rest();
 }</code></pre>
 
-<pre><code>
+
     <h3>2. Реализовать класс Vehicle и классы-наследники Car и Bicycle</h3>
+    <pre><code>
 abstract class Vehicle {
   void move();
 }
