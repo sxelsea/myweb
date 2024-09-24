@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Домашнее задание</h1>
+
+    <h2>Задание 1</h2>
+    <pre><code>// abstract class Animal {
+void eat() => print("Животное ест.");
+void sleep() => print("Животное спит.");
+}
+
+mixin CanFly { void fly() => print("Летает."); }
+mixin CanSwim { void swim() => print("Плавает."); }
+mixin CanRun { void run() => print("Бегает."); }
+
+class Bird extends Animal with CanFly {}
+class Fish extends Animal with CanSwim {}
+class Dog extends Animal with CanRun {}
+
+void main() {
+  Bird().fly();
+  Fish().swim();
+  Dog().run();
+}</code></pre>
+
+    <h2>Задание 2</h2>
+    <pre><code>// abstract class Shape {
+double getArea();
+}
+ 
+class Circle implements Shape {
+double radius;
+ 
+Circle(this.radius);
+ 
+@Override
+double getArea() {
+  return 3.14 * radius * radius;
+}
+}
+ 
+class Square implements Shape {
+double side;
+ 
+Square(this.side);
+ 
+@Override
+double getArea() {
+  return side * side;
+}
+}
+ 
+void main() {
+Shape circle = Circle(5);
+Shape square = Square(4);
+ 
+print("Circle area: ${circle.getArea()}");
+print("Square area: ${square.getArea()}");
+}</code></pre>
+
+    <h2>Задание 3</h2>
+    <pre><code>// mixin SoundMixin {
+void makeSound() {
+  print("Making sound...");
+}
+}
+ 
+mixin RunMixin {
+void run() {
+  print("Running...");
+}
+}
+ 
+class Dog with SoundMixin, RunMixin {
+void display() {
+  print("I am a dog");
+}
+}
+ 
+void main() {
+Dog dog = Dog();
+dog.display();
+dog.makeSound();
+dog.run();
+}</code></pre>
+
+</body>
+</html>
