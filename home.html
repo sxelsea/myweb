@@ -6,61 +6,100 @@
     <title>Домашняя страница</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #eef2f3;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #2c3e50;
+            margin: 0;
         }
         nav {
-            margin-top: 20px;
+            margin: 20px 0;
             background-color: #3498db;
             padding: 10px;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
             margin-right: 20px;
         }
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav ul li a:hover {
-            text-decoration: underline;
+            color: #ffdd57;
         }
         .content {
-            margin-top: 30px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content p {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #555;
+        }
+        .content ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3498db;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
+<header>
     <h1>Добро пожаловать на домашнюю страницу</h1>
+</header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная (Index)</a></li>
-            <li><a href="interface.html">Интерфейсы (Interface)</a></li>
-            <li><a href="exceptions.html">Исключения (Exceptions)</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="index.html">Главная (Index)</a></li>
+        <li><a href="interface.html">Интерфейсы (Interface)</a></li>
+        <li><a href="exceptions.html">Исключения (Exceptions)</a></li>
+    </ul>
+</nav>
 
-    <div class="content">
-        <p>Это домашняя страница, с которой вы можете перейти на другие разделы сайта.</p>
-        <p>Выберите страницу для просмотра:</p>
-        <ul>
-            <li><a href="index.html">Index Page</a> – Основная информация.</li>
-            <li><a href="interface.html">Interface Page</a> – Сведения об интерфейсах.</li>
-            <li><a href="exceptions.html">Exceptions Page</a> - Задания об исключениях.</li>
-        </ul>
-    </div>
+<div class="content">
+    <p>Это домашняя страница, с которой вы можете перейти на другие разделы сайта.</p>
+    <p>Выберите страницу для просмотра:</p>
+    <ul>
+        <li><a href="index.html">Index Page</a> – Основная информация.</li>
+        <li><a href="interface.html">Interface Page</a> – Сведения об интерфейсах.</li>
+        <li><a href="exceptions.html">Exceptions Page</a> - Задания об исключениях.</li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2024 Готовые ответы по Dart. Все права защищены.</p>
+</footer>
 
 </body>
 </html>
