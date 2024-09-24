@@ -22,54 +22,45 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        h1, h2, h3, h4 {
-            color: #2c3e50;
+            background-color: #f4f4f4;
         }
         h1 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            color: #2c3e50;
         }
-        h2 {
+        nav {
             margin-top: 20px;
-            border-bottom: 1px solid #bdc3c7;
-            padding-bottom: 5px;
+            background-color: #3498db;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         pre {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            overflow-x: auto;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        code {
-            display: block;
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .example-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #3498db;
-        }
-        .example-description {
-            margin-bottom: 10px;
-            font-size: 1em;
-            color: #7f8c8d;
-        }
-        .assignment-title {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #e74c3c;
-        }
-        .assignment-description {
-            margin-bottom: 10px;
-            font-size: 1em;
-            color: #95a5a6;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
         }
     </style>
 </head>
