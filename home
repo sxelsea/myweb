@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        nav {
+            margin-top: 20px;
+            background-color: #3498db;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать на домашнюю страницу</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная (Index)</a></li>
+            <li><a href="interface.html">Интерфейсы (Interface)</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <p>Это домашняя страница, с которой вы можете перейти на другие разделы сайта.</p>
+        <p>Выберите страницу для просмотра:</p>
+        <ul>
+            <li><a href="index.html">Index Page</a> – Основная информация.</li>
+            <li><a href="interface.html">Interface Page</a> – Сведения об интерфейсах.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
