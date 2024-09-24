@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задания по Dart - Исключения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        nav {
+            margin-top: 20px;
+            background-color: #3498db;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Задания по Dart - Исключения</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="home.html">Домашняя</a></li>
+            <li><a href="interface.html">Интерфейсы</a></li>
+            <li><a href="exceptions.html">Исключения</a></li>
+            <li><a href="zadanie1.html">Задание 1</a></li>
+            <li><a href="zadanie2.html">Задание 2</a></li>
+            <li><a href="zadanie3.html">Задание 3</a></li>
+            <li><a href="zadanie4.html">Задание 4</a></li>
+            <li><a href="zadanie5.html">Задание 5</a></li>
+            <li><a href="zadanie6.html">Задание 6</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <h2>Исключения в Dart</h2>
+
+        <h3>Задание 1</h3>
+        <pre><code>
+// void main() {
+//     try {
+//         int result = 10 ~/ 0;
+//         print(result);
+//     } catch (e) {
+//         print('Ошибка: деление на ноль!');
+//         print(e);
+//     }
+// }
+        </code></pre>
+
+        <h3>Задание 2</h3>
+        <pre><code>
+// void main() {
+//   try {
+//     int result = 10 ~/0;
+//     print(result);
+//   } on IntegerDivisionByZeroException {
+//     print('Ошибка: деление на ноль!');
+//   } catch (e) {
+//     print('Неизвестная ошибка: $e');
+//   } finally {
+//     print('Операция завершена.');
+//   }
+// }
+        </code></pre>
+
+        <h3>Задание 3</h3>
+        <pre><code>
+// class EmptyStringException implements Exception {
+//   String toString() => 'Ошибка: строка пуста!';
+// }
+// void checkString(String str) {
+//   if (str.isEmpty) throw EmptyStringException();
+//   print('Строка: $str');
+// }
+// void main() {
+//   try {
+//     checkString('');  // Пустая строка
+//   } catch (e) {
+//     print(e);
+//   }
+// }
+        </code></pre>
+
+        <h3>Задание 4</h3>
+        <pre><code>
+// void main() {
+//   try {
+//     int result = 10 ~/0;
+//     print(result);
+//   } catch(e, stackTrace) {
+//     print('Ошибка: $e');
+//     print('Трассировка стека: $stackTrace');
+//   }
+// }
+        </code></pre>
+
+        <h3>Задание 5</h3>
+        <pre><code>
+// void checkValue(int value) {
+//   if (value < 0) {
+//     throw Exception('Значение не может быть отрицательным');
+//   } else {
+//     print('Значение: $value');
+//   }
+// }
+// void main() {
+//   try {
+//     checkValue(-5);
+//   } catch (e) {
+//     print('Ошибка: $e');
+//   }
+// }
+        </code></pre>
+
+        <h3>Задание 6</h3>
+        <pre><code>
+// Future<void> fetchData() async {
+//   throw Exception('Ошибка при загрузке данных');
+// }
+// void main() async {
+//   try {
+//     await fetchData();
+//   } catch (e) {
+//     print('Произошло исключение: $e');
+//   }
+// }
+        </code></pre>
+
+    </div>
+
+</body>
+</html>
