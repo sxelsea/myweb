@@ -89,101 +89,245 @@
 <div class="content">
     <h2>Исключения в Dart</h2>
 
-    <h3>Задание 1</h3>
+    <h3>Пример 1: Базовая обработка исключений</h3>
     <pre><code>
 // void main() {
 //     try {
 //         int result = 10 ~/ 0;
 //         print(result);
 //     } catch (e) {
-//         print('Ошибка: деление на ноль!');
+//         print("Ошибка: деление на ноль!");
 //         print(e);
 //     }
 // }
+// Задание 1:
+// • Измените код так, чтобы программа обрабатывала и выводила различные типы ошибок (например, деление на ноль и ошибки, связанные с типами данных).
+// • Добавьте блок finally, который будет выполнять код независимо от того, произошло исключение или нет.
+void main() {
+    try {
+        int result = 10 ~/ 0; // Деление на ноль
+        print(result);
+
+        int invalidConversion = int.parse("Dart"); // Ошибка конвертации
+        print(invalidConversion);
+        
+    } catch (e) {
+        print("Ошибка: $e");
+    } finally {
+        print("Этот блок выполняется всегда.");
+    }
+}
     </code></pre>
 
-    <h3>Задание 2</h3>
+    <h3>Пример 2: Обработка конкретных типов исключений с on</h3>
     <pre><code>
 // void main() {
-//   try {
-//     int result = 10 ~/0;
-//     print(result);
-//   } on IntegerDivisionByZeroException {
-//     print('Ошибка: деление на ноль!');
-//   } catch (e) {
-//     print('Неизвестная ошибка: $e');
-//   } finally {
-//     print('Операция завершена.');
-//   }
+//     try {
+//         int result = 10 ~/ 0;
+//         print(result);
+//     } on IntegerDivisionByZeroException {
+//         print('Ошибка: деление на ноль!');
+//     } catch (e) {
+//         print('Неизвестная ошибка: $e');
+//     } finally {
+//         print('Операция завершена');
+//     }
 // }
+// Задание 2:
+// • Напишите программу, которая обрабатывает разные виды исключений с использованием нескольких блоков on.
+// • Добавьте обработку ошибки, связанной с доступом к несуществующему элементу списка.
+void main() {
+    try {
+        int result = 10 ~/ 0;
+        print(result);
+
+        int invalidConversion = int.parse("Dart");
+        print(invalidConversion);
+
+        List<int> numbers = [1, 2, 3];
+        print(numbers[5]);
+
+    } on IntegerDivisionByZeroException {
+        print("Ошибка: деление на ноль!");
+    } on FormatException {
+        print("Ошибка: неверный формат данных!");
+    } on RangeError {
+        print("Ошибка: несуществующий элемент списка!");
+    } catch (e) {
+        print("Ошибка: $e");
+    } finally {
+        print("Этот блок выполняется всегда.");
+    }
+}
     </code></pre>
 
-    <h3>Задание 3</h3>
+    <h3>Пример 3: Пользовательские исключения</h3>
     <pre><code>
-// class EmptyStringException implements Exception {
-//   String toString() => 'Ошибка: строка пуста!';
+// class NegativeValueException implements Exception {
+//     String cause;
+//     NegativeValueException(this.cause);
 // }
-// void checkString(String str) {
-//   if (str.isEmpty) throw EmptyStringException();
-//   print('Строка: $str');
+// void checkPositive(int value) {
+//     if (value < 0) {
+//         throw NegativeValueException('Значение не может быть отрицательным');
+//     } else {
+//         print('Значение корректное: $value');
+//     }
 // }
 // void main() {
-//   try {
-//     checkString('');  // Пустая строка
-//   } catch (e) {
-//     print(e);
-//   }
+//     try {
+//         checkPositive(-10);
+//     } catch (e) {
+//         print(e);
+//     }
 // }
+// Задание 3:
+// • Создайте своё собственное исключение для ситуации, когда строка пустая.
+// • Напишите функцию, которая проверяет наличие текста в строке и выбрасывает исключение, если строка пуста.
+class EmptyStringException implements Exception {
+  String toString() => "Ошибка: строка не должна быть пустой!";
+}
+
+void checkString(String str) {
+  if (str.isEmpty) {
+    throw EmptyStringException();
+  }
+  print("Строка: $str");
+}
+
+void main() {
+  try {
+    checkString(""); 
+  } on EmptyStringException catch (e) {
+    print(e); 
+  } finally {
+    print("Проверка завершена.");
+  }
+}
     </code></pre>
 
-    <h3>Задание 4</h3>
+    <h3>Пример 4: Перехват ошибок с параметрами</h3>
     <pre><code>
 // void main() {
-//   try {
-//     int result = 10 ~/0;
-//     print(result);
-//   } catch(e, stackTrace) {
-//     print('Ошибка: $e');
-//     print('Трассировка стека: $stackTrace');
-//   }
+//     try {
+//         int result = 10 ~/ 0;
+//         print(result);
+//     } catch (e, stackTrace) {
+//         print('Ошибка: $e');
+//         print('Трассировка стека: $stackTrace');
+//     }
 // }
+// Задание 4:
+// • Попробуйте вызвать несколько разных ошибок (например, деление на ноль и преобразование типов) и выведите информацию об исключении и трассировке стека.
+// • Оптимизируйте 
+void main() {
+    try {
+        int result = 10 ~/ 0;
+        print(result);
+
+        int invalidConversion = int.parse("Dart");
+        print(invalidConversion);
+
+    } catch (e, s) {
+        print("Ошибка: $e");
+        print("Трассировка стека:\n$s");
+    } finally {
+        print("Завершение обработки ошибок.");
+    }
+}
     </code></pre>
 
-    <h3>Задание 5</h3>
+    <h3>Пример 5: Работа с методом throw</h3>
     <pre><code>
 // void checkValue(int value) {
-//   if (value < 0) {
-//     throw Exception('Значение не может быть отрицательным');
-//   } else {
-//     print('Значение: $value');
-//   }
+//     if (value < 0) {
+//         throw Exception('Значение не может быть отрицательным');
+//     } else {
+//         print('Значение: $value');
+//     }
 // }
 // void main() {
-//   try {
-//     checkValue(-5);
-//   } catch (e) {
-//     print('Ошибка: $e');
-//   }
+//     try {
+//         checkValue(-5);
+//     } catch (e) {
+//         print('Ошибка: $e');
+//     }
 // }
-    </code></pre>
+// Задание 5:
+// • Модифицируйте программу, чтобы она выбрасывала разные исключения в зависимости от условий (например, если число больше 1000, выбрасывать другое исключение).
+// • Реализуйте обработку этих исключений с разными сообщениями для пользователя.
 
-    <h3>Задание 6</h3>
-    <pre><code>
-// Future<void> fetchData() async {
-//   throw Exception('Ошибка при загрузке данных');
-// }
-// void main() async {
-//   try {
-//     await fetchData();
-//   } catch (e) {
-//     print('Произошло исключение: $e');
-//   }
-// }
+class NumberTooLargeException implements Exception {
+  String toString() => "Ошибка: число слишком большое!";
+}
+
+class DivisionByZeroException implements Exception {
+  String toString() => "Ошибка: деление на ноль!";
+}
+
+void checkNumber(int number) {
+  if (number > 1000) throw NumberTooLargeException();
+  if (number == 0) throw DivisionByZeroException();
+  
+  print("Результат: ${10 ~/ number}");
+}
+
+void main() {
+  for (var number in [0, 500, 1500]) {
+    try {
+      checkNumber(number);
+    } catch (e) {
+      print(e);
+    } finally {
+      print("Завершение проверки для $number.\n");
+    }
+  }
+}
     </code></pre>
+<h3>Пример 6: Исключения в асинхронном коде</h3>
+<pre><code>
+// Dart поддерживает работу с асинхронными операциями, и исключения также могут возникать в асинхронном коде.
+
+Future<void> fetchData() async {
+    throw Exception('Ошибка при загрузке данных');
+}
+
+void main() async {
+    try {
+        await fetchData();
+    } catch (e) {
+        print('Произошло исключение: $e');
+    }
+}
+
+// Пример 6: Исключения в асинхронном коде
+Future<void> asyncFunction(int number) async {
+  if (number < 0) {
+    throw Exception("Ошибка: число не должно быть отрицательным!");
+  }
+  await Future.delayed(Duration(seconds: 1));
+  print("Результат: ${10 ~/ number}");
+}
+
+void main() async {
+  List<int> numbers = [5, -1, 0];
+
+  for (var number in numbers) {
+    try {
+      await asyncFunction(number);
+    } catch (e) {
+      print(e);
+    } finally {
+      print("Проверка завершена для $number.\n");
+    }
+  }
+}
+</code></pre>
+
 </div>
 
 <footer>
-    <p>&copy; 2024 Готовые ответы по Dart. Все права защищены.</p>
+    <p>&copy; 2024 Ваше Имя. Все права защищены.</p>
 </footer>
 
 </body>
